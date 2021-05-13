@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tanapat</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .calculator1 {
+            background-color: #f5c0c0;
+            width: 250px;
+            height: 320px;
+            border: 7px solid rgb(58, 50, 39);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+            font-family: monospace;
+            align-items: center;
+            box-shadow: 10px 10px #ff7171;
+        }
+        .calculator2 {
+            background-color: #f5c0c0;
+            width: 250px;
+            height: 320px;
+            border: 7px solid rgb(58, 50, 39);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+            font-family: monospace;
+            align-items: center;
+            box-shadow: 10px 10px #ff7171
+        }
+        .calculator1 h2 {
+            text-align: center;
+        }
+        .calculator2 h2 {
+            text-align: center;
+        }
+        .botton {
+            background-color: salmon;
+            border-radius: 10px;
+            padding: 13px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1b2021;
+            font-family: fantasy;
+            background-color: #ffb037;
+        }
+        h2 {
+            text-align: center;
+            color: #1b2021;
+            font-family: fantasy;
+        }
+        body {
+            background-color: #a3d2ca;
+        }
+        .img {
+            border-radius: 10%;
+            border: 7px solid rgb(58, 50, 39);
+            
+             
+        }
+        h3 {
+            text-align: center;
+            color: #1b2021;
+        }
+    </style>
+    <script>
+        function ความเร็วตัด() {
+            let Dm = parseFloat(document.getElementById("diameter").value);
+            let n = parseFloat(document.getElementById("ความเร็วรอบ").value);
+            let Vc = (3.141592 * Dm * n)/1000;
+            document.getElementById("ความเร็วตัด").value = Vc.toFixed(3);   
+        }
+    </script>
+    <script>
+        function ความเร็วป้อน() {
+            let fz = parseFloat(document.getElementById("feedpertooth").value);
+            let n2 = parseFloat(document.getElementById("ความเร็วรอบ2").value);
+            let Zn = parseFloat(document.getElementById("จำนวนฟัน").value);
+            let Vf = fz * Zn * n2 ;
+            document.getElementById("ความเร็วป้อน").value = Vf.toFixed(3);
+            
+        }
+    </script>
+</head>
+<body>
+    <div>
+     <h1>Speed rate & Feed rate</h1>
+    </div>
+    <div class="container">
+    <!-- Speed Rate -->   
+    <div class="calculator1">
+        <h2>Speed Rate</h2>
+        <label for="">Diameter (Dm)</label> <br>
+        <input type="text" name="" id="diameter" size="10"> (mm) <br>
+        <br>
+        <label for="">Spindle speed (n)</label> <br>
+        <input type="text" name="" id="ความเร็วรอบ" size="10"> (rev/min) <br>
+        <br>
+        <label for="">Speed rate (Vc)</label> <br>
+        <input type="text" name="" id="ความเร็วตัด" size="10"> (m/min)
+        <br> <br>
+        <button class="botton" onclick="ความเร็วตัด()">Enter</button>
+    </div>
+    <!-- Feed Rate -->    
+    <div class="calculator2">
+        <h2 >Feed Rate</h2>
+        <label for="">Feed per teeth (fz) </label> <br>
+        <input type="text" name="" id="feedpertooth" size="10"> (mm/tooth) <br>
+        <br>
+        <label for="">Spindle speed (n)</label> <br>
+        <input type="text" name="" id="ความเร็วรอบ2" size="10"> (rev/min) <br>
+        <br>
+        <label for="">Number of teeth (Zn)</label> <br>
+        <input type="text" name="" id="จำนวนฟัน" size="10"> <br>
+        <br>
+        <label for="">Feed rate (Vf)</label> <br>
+        <input type="text" name="" id="ความเร็วป้อน" size="10"> (mm/min) <br>
+        <br>
+        <button class="botton" onclick="ความเร็วป้อน()">Enter</button>
+    </div>
+    </div>
+
+    <div class="container">
+    <img class="img" src="https://www.meetyoucarbide.com/wp-content/uploads/2021/01/%E5%9B%BE%E7%89%871-1.png">
+    </div>
+    <div >
+    <h3 >ธนภัทร สาระคามครบุรี 63070504806 </h3>
+    </div>
+    
+</body>
+</html>
